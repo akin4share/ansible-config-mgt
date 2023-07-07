@@ -35,7 +35,7 @@
         state: directory
         mode: '0755'
 
-- name: Create a test directory
+- name: Create a test file
   hosts: webservers, nfs, lb, db
   become_user: root
   tasks:
