@@ -44,3 +44,12 @@
         path: $HOME/test_directory/test_file.txt
         state: touch
         mode: u=rw,g=r,o=r
+
+- name: TImezone change
+  hosts: "webservers, nfs, lb, db"
+  become_user: root
+  become: true
+  tasks:
+    - name: Set timezone to Africa/Lagos
+      community.general.timezone:
+        name: Africa/Lagos
